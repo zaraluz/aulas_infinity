@@ -1,0 +1,19 @@
+senha_cadastrada = input('Cadastre sua senha: ')
+
+print('Inicializando')
+
+tentativas = 3
+
+for tentativa in range(tentativas):
+    senha = input('Digite a senha: ')
+
+    if senha == senha_cadastrada:
+        print('Bem-vindo')
+        break
+
+    else:
+        tentativas_restantes = tentativas - (tentativa + 1)
+        if tentativas_restantes > 0:
+            print(f'Senha incorreta. Você tem mais {tentativas_restantes} tentativa(s).')
+        else:
+            print('Celular bloqueado.')
