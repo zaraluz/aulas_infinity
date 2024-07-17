@@ -1,0 +1,14 @@
+velocidade = float(input('Digite a velocidade: '))
+
+velocidade_max = 80.0
+
+if velocidade > velocidade_max:
+
+ excesso = velocidade - velocidade_max
+
+ multa = excesso * 20.0
+
+ print(f'Multado! O valor da multa é de R${multa}')
+
+else:
+ print('Dentro do limite de velocidade')
