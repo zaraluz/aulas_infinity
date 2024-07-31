@@ -1,0 +1,49 @@
+turma = {}
+
+def Adicionar_Aluno():
+    matricula = input("Matrícula aluno: ")
+    nome = input ("Nome aluno: ")
+    if matricula in turma: 
+        print("Aluno já cadastrado")
+    else:
+        turma[matricula] = nome
+        print(f"Aluno {nome} adicionado com sucesso")
+
+def Remover_Aluno() :
+    matricula = input("Matricula para ser removida: ")
+
+    if matricula in turma:
+        nome= turma.pop(matricula)
+        print (f"Aluno {nome} removido")
+    else: 
+        print("Matricula não encontrada")
+
+def Ver_Turma() :
+    if not turma:
+        print("Nenhum aluno encontrado")
+    else:
+        print ("Turma: ")
+        for matricula, nome in turma.items():
+            print(f"Matricula: {matricula}, Nome: {nome}")
+
+def menu():
+    print("\nMenu de Opções: ", "\n1.Adicionar Aluno: ",
+    "\n2.Remover Aluno: ", "\n3.Visualizar turma: ", "\n4.Sair"  )
+
+def menu2():
+    while True:
+        menu()
+        opcao = input ("Escolha uma opção: ")
+        if opcao == '1': Adicionar_Aluno()
+        elif opcao =='2': Remover_Aluno()
+        elif opcao == '3': Ver_Turma()
+        elif opcao == '4': 
+            print("Saindo do programa")
+            break
+        else: print("Opção inválida")
+
+
+menu2()
+
+
+
