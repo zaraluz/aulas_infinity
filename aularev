@@ -1,0 +1,21 @@
+notas_totais = []
+
+while True :
+    nota = float(input("Digite as notas dos alunos: (ou valor inválido para sair):"))
+    if 0 <= nota <= 10:
+        notas_totais.append(nota)
+    else:
+        print("Nota Inválida. Saindo")
+        break
+
+if notas_totais:
+    media = sum(notas_totais)/ len(notas_totais)
+    print(f"Média da sala: {media}")
+    if media >= 7:
+        print("Sala aprovada")
+    if media <= 7:
+        print("Sala reprovada")
+    else:
+        print("Nenhuma nota válida")
+
+
